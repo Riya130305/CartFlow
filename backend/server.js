@@ -1,4 +1,5 @@
 import path from 'path';
+import cors from 'cors';
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
@@ -15,7 +16,7 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
-
+app.use(cors({ origin: 'https://cart-flow-e1t2.vercel.app', credentials: true })); // Enable CORS for the frontend URL with credentials
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
