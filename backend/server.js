@@ -16,7 +16,7 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
-app.use(cors({ origin: 'https://cart-flow-e1t2.vercel.app', credentials: true })); // Enable CORS for the frontend URL with credentials
+app.use(cors({ origin: ['https://cart-flow-e1t2.vercel.app', 'http://localhost:3000','https://cartflow-backend-j4dk.onrender.com'], credentials: true })); // Enable CORS for the frontend URL with credentials
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
